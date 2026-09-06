@@ -3,8 +3,6 @@ import sys
 import time
 import subprocess
 from importlib.metadata import requires
-from rich.console import Console
-from rich.markdown import Markdown
 
 
 def spin_loader(stop_event):
@@ -28,6 +26,9 @@ def install_requirements():
 
 def prettify_llm_output(response):
     """Prettify LLM output using Rich markdown."""
+    from rich.console import Console  # deferred, only needed to render a reply
+    from rich.markdown import Markdown
+
     console = Console()
     md = Markdown(response.strip())
     console.print("\n", md, "\n")

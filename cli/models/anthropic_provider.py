@@ -1,7 +1,12 @@
 """Anthropic Claude provider implementation using LangChain."""
 
-from langchain_core.language_models import BaseChatModel
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 from cli.models.base_provider import BaseLLMProvider, load_backend
+
+if TYPE_CHECKING:
+    from langchain_core.language_models import BaseChatModel
 
 
 class AnthropicProvider(BaseLLMProvider):

@@ -1,8 +1,10 @@
 """CLI entry point for Vertex-CLI."""
 
+import logging
 import os
 import sys
 import argparse
+import warnings
 from cli.config_manager import ConfigurationManager
 from cli.llm_service import LLMService
 from cli.chat_history import ChatHistory, get_shell_history, history_file
@@ -155,6 +157,10 @@ def _run():
 
 def main():
     """Report failures as messages instead of tracebacks."""
+    # Provider libraries warn about their own internals (ignored sampling params,
+    # automatic function calling). None of it is actionable for a CLI user.
+    warnings.filterwarnings("ignore")
+    logging.getLogger("google_genai").setLevel(logging.ERROR)
     try:
         _run()
     except KeyboardInterrupt:

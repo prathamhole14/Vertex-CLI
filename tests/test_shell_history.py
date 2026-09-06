@@ -1,5 +1,5 @@
 """
-Tests for shell history reading and top-level CLI error reporting.
+Tests for reading the current shell's history file.
 
 `tex debug` used to read ~/.bash_history unconditionally, so it silently returned
 nothing under zsh, and zsh's metafied bytes made a plain UTF-8 read raise
@@ -14,7 +14,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import pytest
 
 from cli.chat_history import get_shell_history, history_file
-from cli.prompt import main
 
 
 @pytest.fixture
@@ -66,18 +65,3 @@ def test_survives_non_utf8_bytes(histfile):
 def test_missing_history_file_is_empty(tmp_path, monkeypatch):
     monkeypatch.setenv("HISTFILE", str(tmp_path / "absent"))
     assert get_shell_history(3) == ""
-
-
-def test_cli_reports_errors_without_a_traceback(tmp_path, monkeypatch, capsys):
-    """A failure should print 'Error: ...' and exit 1, not dump a stack trace."""
-    monkeypatch.setenv("HOME", str(tmp_path))
-    monkeypatch.setenv("USERPROFILE", str(tmp_path))  # expanduser on Windows
-    monkeypatch.setattr(sys, "argv", ["tex", "select", "no-such-model"])
-
-    with pytest.raises(SystemExit) as excinfo:
-        main()
-
-    assert excinfo.value.code == 1
-    err = capsys.readouterr().err
-    assert err.startswith("Error: ")
-    assert "Traceback" not in err

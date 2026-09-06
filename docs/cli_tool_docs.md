@@ -10,12 +10,19 @@ Vertex CLI is a powerful command-line tool that leverages Large Language Models 
 
 Follow these steps to get started:
 
-### Install Vertex-CLI from TestPyPI
+### Install Vertex-CLI
 
-To install [`Vertex-CLI`](https://github.com/prathamhole14/vertex-cli) from TestPyPI, run:
+To install [`Vertex-CLI`](https://pypi.org/project/Vertex-CLI/), run:
 
 ```bash
-pip install -i https://test.pypi.org/simple/ Vertex-CLI
+pip install Vertex-CLI
+```
+
+Gemini is installed by default. Add a provider extra if you need one:
+
+```bash
+pip install "Vertex-CLI[openai]"
+pip install "Vertex-CLI[anthropic]"
 ```
 
 After installation, initialize the CLI configuration file:
@@ -24,7 +31,7 @@ After installation, initialize the CLI configuration file:
 tex --setup
 ```
 
-This will create the `models_api.json` under `~/.config/ai_model_manager/` with default entries.
+This will create an empty `models_config.json` under `~/.config/ai_model_manager/`.
 
 ---
 
@@ -42,7 +49,7 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 2. **Install dependencies and set up the project:**
 
    ```bash
-   pip install -e .
+   pip install -e ".[openai,anthropic]"
    ```
 
 3. **Initialize the CLI configuration:**

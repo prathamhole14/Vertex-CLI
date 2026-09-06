@@ -1,6 +1,6 @@
 ## Homepage
 
-### Install Vertex-CLI from TestPyPI
+### Overview
 
 **Vertex-CLI** is a command-line tool that lets you query Large Language Models (LLMs) and debug faster, straight from your terminal.
 
@@ -18,10 +18,10 @@ Replace `"tell me about the solar system"` with any query you like Vertex-CLI wi
 
 ### Installation
 
-To install [`Vertex-CLI`](https://github.com/prathamhole14/vertex-cli) from **TestPyPI**, run:
+To install [`Vertex-CLI`](https://pypi.org/project/Vertex-CLI/), run:
 
 ```bash
-pip install -i https://test.pypi.org/simple/ Vertex-CLI
+pip install Vertex-CLI
 ```
 
 Then initialize the CLI with:

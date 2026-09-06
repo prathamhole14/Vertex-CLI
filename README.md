@@ -13,17 +13,23 @@ A modern CLI tool for interacting with multiple LLMs using LangChain.
 ## Installation
 
 ```bash
-git clone https://github.com/prathamhole14/Vertex-CLI.git
-cd Vertex-CLI
-pip install -e .
+pip install Vertex-CLI
 ```
 
 Gemini works out of the box. OpenAI and Anthropic are optional extras, so their
 packages are only downloaded if you ask for them:
 
 ```bash
-pip install -e ".[openai]"     # OpenAI models
-pip install -e ".[anthropic]"  # Anthropic Claude models
+pip install "Vertex-CLI[openai]"     # OpenAI models
+pip install "Vertex-CLI[anthropic]"  # Anthropic Claude models
+```
+
+To work on Vertex-CLI itself, install from a clone instead:
+
+```bash
+git clone https://github.com/prathamhole14/Vertex-CLI.git
+cd Vertex-CLI
+pip install -e ".[openai,anthropic]"
 ```
 
 ## Quick Start

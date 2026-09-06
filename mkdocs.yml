@@ -1,5 +1,5 @@
 site_name: Vertex-CLI Documentation
-site_url: https://github.com/prtm2110/vertex-cli
+site_url: https://github.com/prathamhole14/vertex-cli
 theme:
   name: material
   features:
@@ -50,7 +50,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/Prtm2110
+      link: https://github.com/prathamhole14
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/pratham-hole
 
@@ -70,4 +70,4 @@ markdown_extensions:
   - attr_list
 
 copyright: |
-  &copy; 2025 <a href="https://github.com/prtm2110" target="_blank" rel="noopener">Pratham Hole</a>
+  &copy; 2025 <a href="https://github.com/prathamhole14" target="_blank" rel="noopener">Pratham Hole</a>

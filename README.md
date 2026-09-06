@@ -13,7 +13,7 @@ A modern CLI tool for interacting with multiple LLMs using LangChain.
 ## Installation
 
 ```bash
-git clone https://github.com/Prtm2110/Vertex-CLI.git
+git clone https://github.com/prathamhole14/Vertex-CLI.git
 cd Vertex-CLI
 pip install -e .
 ```
@@ -143,7 +143,7 @@ Replace the quoted string with any query you'd like.
 
 ![alt text](docs/images/eg_matplotlib.gif)
 
-🔗 **Complete CLI Documentation:** [CLI Commands](https://prtm2110.github.io/Vertex-CLI/cli_tool_docs/)
+🔗 **Complete CLI Documentation:** [CLI Commands](https://prathamhole14.github.io/Vertex-CLI/cli_tool_docs/)
 
 ---
 
@@ -193,16 +193,16 @@ Contributions are welcome! Follow these steps to contribute:
    ```
 5. **Open a pull request**
 
-🔗 **Contributor Guide:** [How to Contribute](https://prtm2110.github.io/Vertex-CLI/contributors_guide/)
+🔗 **Contributor Guide:** [How to Contribute](https://prathamhole14.github.io/Vertex-CLI/contributors_guide/)
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/Prtm2110/Vertex-CLI/blob/main/LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/prathamhole14/Vertex-CLI/blob/main/LICENSE) file for more details.
 
 ---
 
 ## Support
 
-If you encounter any issues, open an issue on the **[GitHub repository](https://github.com/Prtm2110/Vertex-CLI/issues)**.
+If you encounter any issues, open an issue on the **[GitHub repository](https://github.com/prathamhole14/Vertex-CLI/issues)**.

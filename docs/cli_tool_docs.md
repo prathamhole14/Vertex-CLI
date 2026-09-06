@@ -2,7 +2,7 @@
 
 Vertex CLI is a powerful command-line tool that leverages Large Language Models (LLMs) to answer queries and debug faster. With just a few commands, you can set up and start using advanced features like querying LLMs and generating insights.
 
-**Complete Documentation:** [Vertex CLI Docs](https://prtm2110.github.io/Vertex-CLI/)
+**Complete Documentation:** [Vertex CLI Docs](https://prathamhole14.github.io/Vertex-CLI/)
 
 ---
 
@@ -12,7 +12,7 @@ Follow these steps to get started:
 
 ### Install Vertex-CLI from TestPyPI
 
-To install [`Vertex-CLI`](https://github.com/prtm2110/vertex-cli) from TestPyPI, run:
+To install [`Vertex-CLI`](https://github.com/prathamhole14/vertex-cli) from TestPyPI, run:
 
 ```bash
 pip install -i https://test.pypi.org/simple/ Vertex-CLI
@@ -35,7 +35,7 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Prtm2110/Vertex-CLI
+   git clone https://github.com/prathamhole14/Vertex-CLI
    cd Vertex-CLI
    ```
 
@@ -146,4 +146,4 @@ Once installed and configured, you can start chatting or debugging commands:
 
 ---
 
-🔗 **Complete CLI Documentation:** [CLI Commands](https://prtm2110.github.io/Vertex-CLI/cli_tool_docs/)
+🔗 **Complete CLI Documentation:** [CLI Commands](https://prathamhole14.github.io/Vertex-CLI/cli_tool_docs/)

@@ -33,9 +33,9 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 [project.urls]
-Homepage = "https://github.com/Prtm2110/Vertex-CLI"
-Repository = "https://github.com/Prtm2110/Vertex-CLI"
-Documentation = "https://prtm2110.github.io/Vertex-CLI/"
+Homepage = "https://github.com/prathamhole14/Vertex-CLI"
+Repository = "https://github.com/prathamhole14/Vertex-CLI"
+Documentation = "https://prathamhole14.github.io/Vertex-CLI/"
 
 [project.optional-dependencies]
 dev = ["twine", "build", "mkdocs-material", "mkdocs-material[imaging]", "mkdocstrings", "mkdocstrings-python"]

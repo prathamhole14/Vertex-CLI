@@ -62,8 +62,10 @@ class LLMService:
         if model_name is None:
             model_name = self.config_manager.get_selected_model()
             if not model_name:
-                # Fall back to default
-                model_name = "gemini-2.5-flash"
+                raise ValueError(
+                    "No model selected. Run 'tex config <model> <api_key>', "
+                    "then 'tex select <model>'."
+                )
 
         # Get provider
         provider = self._get_provider(model_name)

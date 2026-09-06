@@ -20,19 +20,8 @@ class ConfigurationManager:
             self._create_default_config()
 
     def _create_default_config(self) -> None:
-        """Create default configuration file."""
-        default_config_path = os.path.join(
-            os.path.dirname(os.path.dirname(__file__)), "config", "default_config.json"
-        )
-
-        try:
-            with open(default_config_path, "r") as f:
-                default_config = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError):
-            # Fallback if JSON file not found
-            default_config = {"selected_model": None, "models": {}}
-
-        self._write_config(default_config)
+        """Create an empty configuration file."""
+        self._write_config({"selected_model": None, "models": {}})
         print(f"Configuration file created at: {self.file_path}")
 
     def _read_config(self) -> Dict[str, Any]:

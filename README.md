@@ -25,15 +25,15 @@ pip install -e .
 tex --setup
 
 # Configure a model (provider auto-detected from model name)
-tex config gemini-2.5-flash YOUR_API_KEY
+tex config gemini-3.6-flash YOUR_API_KEY
 tex config gpt-4 YOUR_OPENAI_KEY
-tex config claude-3-opus YOUR_ANTHROPIC_KEY
+tex config claude-opus-5 YOUR_ANTHROPIC_KEY
 
 # Or specify provider explicitly
 tex config my-model YOUR_KEY --provider google
 
 # Select active model
-tex select gemini-2.5-flash
+tex select gemini-3.6-flash
 
 # Use it
 tex "explain quantum computing"
@@ -65,9 +65,9 @@ Models are configured in `~/.config/ai_model_manager/models_config.json`
 Example configuration:
 ```json
 {
-  "selected_model": "gemini-2.5-flash",
+  "selected_model": "gemini-flash-latest",
   "models": {
-    "gemini-2.5-flash": {
+    "gemini-flash-latest": {
       "provider": "google",
       "api_key": "your-api-key",
       "temperature": 0.7
@@ -98,10 +98,10 @@ See [LICENSE](LICENSE) file.
 You can configure the CLI to use a specific LLM model by adding or updating your API key:
 
 ```bash
-tex config gemini-1.5-flash YOUR_MODEL_API_KEY
+tex config gemini-flash-latest YOUR_MODEL_API_KEY
 ```
 
-Replace `gemini-1.5-flash` with your preferred model name and `YOUR_MODEL_API_KEY` with your API key.
+Replace `gemini-flash-latest` with your preferred model name and `YOUR_MODEL_API_KEY` with your API key.
 
 To list all configured models:
 
@@ -112,13 +112,13 @@ tex list
 To remove a model:
 
 ```bash
-tex remove gemini-1.5-creative
+tex remove gemini-flash-lite-latest
 ```
 
 To select a model as the default:
 
 ```bash
-tex select gemini-1.5-flash
+tex select gemini-flash-latest
 ```
 
 ---

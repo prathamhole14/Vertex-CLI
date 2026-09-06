@@ -92,7 +92,7 @@ Each class has one clear purpose:
 {
   "selected_model": "gpt-4",
   "models": {
-    "gemini-2.5-flash": {
+    "gemini-flash-latest": {
       "provider": "google",
       "api_key": "your-api-key",
       "temperature": 0.7,

@@ -58,10 +58,10 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 You can configure the CLI to use a specific LLM model by adding or updating your API key:
 
 ```bash
-tex config gemini-1.5-flash YOUR_MODEL_API_KEY
+tex config gemini-flash-latest YOUR_MODEL_API_KEY
 ```
 
-Replace `gemini-1.5-flash` with your preferred model name and `YOUR_MODEL_API_KEY` with your API key.
+Replace `gemini-flash-latest` with your preferred model name and `YOUR_MODEL_API_KEY` with your API key.
 
 To list all configured models:
 
@@ -72,13 +72,13 @@ tex list
 To remove a model:
 
 ```bash
-tex remove gemini-1.5-creative
+tex remove gemini-flash-lite-latest
 ```
 
 To select a model as the default:
 
 ```bash
-tex select gemini-1.5-flash
+tex select gemini-flash-latest
 ```
 
 ---

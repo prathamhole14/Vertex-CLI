@@ -2,6 +2,7 @@ import itertools
 import sys
 import time
 import subprocess
+from importlib.metadata import requires
 from rich.console import Console
 from rich.markdown import Markdown
 
@@ -19,16 +20,10 @@ def spin_loader(stop_event):
 
 
 def install_requirements():
-    """Install required dependencies."""
-    dependencies = [
-        "rich>=14.0.0",
-        "langchain>=0.1.0",
-        "langchain-google-genai>=1.0.0",
-        "langchain-openai>=0.0.5",
-        "langchain-anthropic>=0.1.0",
-    ]
-    for package in dependencies:
-        subprocess.run([sys.executable, "-m", "pip", "install", package])
+    """Install the dependencies declared in pyproject.toml."""
+    for package in requires("Vertex-CLI") or []:
+        if "extra ==" not in package:  # skip optional [dev] extras
+            subprocess.run([sys.executable, "-m", "pip", "install", package])
 
 
 def prettify_llm_output(response):

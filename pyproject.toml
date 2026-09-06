@@ -7,12 +7,11 @@ authors = [
     { name = "Pratham Hole", email = "prathamhole@gmail.com" }
 ]
 dependencies = [
-    "rich>=14.0.0",
-    "langchain>=0.1.0",
-    "langchain-google-genai>=1.0.0",
-    "langchain-openai>=0.0.5",
-    "langchain-anthropic>=0.1.0",
-    "langchain-core>=0.1.0",
+    "rich>=14.0.0,<16.0.0",
+    "langchain-core>=1.0.0,<2.0.0",
+    "langchain-google-genai>=3.0.0,<5.0.0",
+    "langchain-openai>=1.0.0,<2.0.0",
+    "langchain-anthropic>=1.0.0,<2.0.0",
 ]
 license = "BSD-3-Clause"
 requires-python = ">=3.10"
@@ -134,7 +133,7 @@ strict_equality = true
 
 [[tool.mypy.overrides]]
 module = [
-    "langchain.*",
+    "langchain_core.*",
     "langchain_google_genai.*",
     "langchain_openai.*",
     "langchain_anthropic.*",

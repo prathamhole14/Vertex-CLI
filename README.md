@@ -82,44 +82,8 @@ Example configuration:
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.10+
 - LangChain and provider packages
-
-## License
-
-See [LICENSE](LICENSE) file.
-   tex-init
-   ```
-
----
-
-## Configuration
-
-You can configure the CLI to use a specific LLM model by adding or updating your API key:
-
-```bash
-tex config gemini-flash-latest YOUR_MODEL_API_KEY
-```
-
-Replace `gemini-flash-latest` with your preferred model name and `YOUR_MODEL_API_KEY` with your API key.
-
-To list all configured models:
-
-```bash
-tex list
-```
-
-To remove a model:
-
-```bash
-tex remove gemini-flash-lite-latest
-```
-
-To select a model as the default:
-
-```bash
-tex select gemini-flash-latest
-```
 
 ---
 
@@ -199,7 +163,7 @@ Contributions are welcome! Follow these steps to contribute:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/prathamhole14/Vertex-CLI/blob/main/LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 

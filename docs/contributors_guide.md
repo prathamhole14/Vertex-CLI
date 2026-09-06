@@ -28,7 +28,7 @@ tex-init
 If you have your own model API key, you can configure it like this:
 
 ```bash
-tex --config gemini-flash-latest <model-api-key>
+tex config gemini-flash-latest <model-api-key>
 ```
 
 Replace `gemini-flash-latest` with your model's name and `<model-api-key>` with your actual API key.

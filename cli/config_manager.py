@@ -11,7 +11,7 @@ class ConfigurationManager:
     def __init__(self, file_path: Optional[str] = None):
         if file_path is None:
             config_dir = os.path.join(os.path.expanduser("~"), ".config", "ai_model_manager")
-            os.makedirs(config_dir, exist_ok=True)
+            os.makedirs(config_dir, mode=0o700, exist_ok=True)
             file_path = os.path.join(config_dir, "models_config.json")
 
         self.file_path = file_path
@@ -36,6 +36,7 @@ class ConfigurationManager:
         """Write configuration to file."""
         with open(self.file_path, "w") as f:
             json.dump(data, f, indent=4)
+        os.chmod(self.file_path, 0o600)  # the file holds API keys
 
     def get_model_config(self, model_name: str) -> Optional[Dict[str, Any]]:
         """Get configuration for a specific model."""

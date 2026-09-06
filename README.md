@@ -7,7 +7,7 @@ A modern CLI tool for interacting with multiple LLMs using LangChain.
 - Unified interface for multiple LLM providers (Google Gemini, OpenAI, Anthropic Claude)
 - Clean architecture following SOLID principles
 - Conversation history management
-- Bash command debugging
+- Shell command debugging
 - Easy model switching
 
 ## Installation
@@ -44,7 +44,7 @@ tex "explain quantum computing"
 ```bash
 tex "your question"                  # Ask a question
 tex chat <text>                      # Chat mode
-tex debug                            # Debug bash commands
+tex debug                            # Debug shell commands
 tex config <model> <api_key>         # Configure model (auto-detects provider)
 tex config <model> <key> --provider <provider>  # Specify provider explicitly
 tex list                             # List models

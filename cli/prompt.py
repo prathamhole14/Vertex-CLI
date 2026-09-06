@@ -5,15 +5,15 @@ import sys
 import argparse
 from cli.config_manager import ConfigurationManager
 from cli.llm_service import LLMService
-from cli.chat_history import ChatHistory, get_bash_history
+from cli.chat_history import ChatHistory, get_shell_history, history_file
 from cli.llm import generate_response
 
 HISTORY_FILE = os.path.expanduser("~/.cache/cli_chat_history.json")
-DEFAULT_BASH_HISTORY_COUNT = 3
+DEFAULT_SHELL_HISTORY_COUNT = 3
 
 
-def main():
-    """Main CLI entry point."""
+def _run():
+    """Parse arguments and dispatch the requested command."""
     raw = sys.argv[1:]
     known_cmds = ["chat", "debug", "config", "list", "remove", "select"]
 
@@ -46,12 +46,12 @@ def main():
     chat_parser.add_argument("text", nargs="+", help="Prompt text")
 
     # debug
-    debug_parser = subparsers.add_parser("debug", help="Debug recent bash commands")
+    debug_parser = subparsers.add_parser("debug", help="Debug recent shell commands")
     debug_parser.add_argument(
         "-n",
         "--number",
         type=int,
-        default=DEFAULT_BASH_HISTORY_COUNT,
+        default=DEFAULT_SHELL_HISTORY_COUNT,
         help="Number of recent commands",
     )
     debug_parser.add_argument("-p", "--prompt", type=str, help="Additional explanation prompt")
@@ -91,8 +91,13 @@ def main():
         generate_response(prompt_text, llm_service, history)
 
     elif args.command == "debug":
-        bash = get_bash_history(args.number)
-        dprompt = f"{bash}{args.prompt or ''} "
+        commands = get_shell_history(args.number)
+        if not commands:
+            raise ValueError(
+                f"No shell history found at {history_file()}. "
+                "Set HISTFILE if your shell stores it elsewhere."
+            )
+        dprompt = f"{commands}{args.prompt or ''} "
         dprompt += "output what is wrong with the commands used and suggest correct ones"
         generate_response(dprompt, llm_service, history)
 
@@ -139,19 +144,24 @@ def main():
                 print()
 
     elif args.command == "remove":
-        try:
-            config_manager.remove_model(args.model)
-        except ValueError as e:
-            print(f"Error: {e}")
+        config_manager.remove_model(args.model)
 
     elif args.command == "select":
-        try:
-            config_manager.set_selected_model(args.model)
-        except ValueError as e:
-            print(f"Error: {e}")
+        config_manager.set_selected_model(args.model)
 
     else:
         parser.print_help()
+
+
+def main():
+    """Report failures as messages instead of tracebacks."""
+    try:
+        _run()
+    except KeyboardInterrupt:
+        sys.exit(130)
+    except Exception as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

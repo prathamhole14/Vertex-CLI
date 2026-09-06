@@ -1,5 +1,9 @@
 import os
 import json
+import re
+
+# zsh extended_history prefixes each entry with ": <start>:<elapsed>;".
+ZSH_ENTRY = re.compile(r"^: \d+:\d+;")
 
 DEFAULT_HISTORY_SIZE = 10
 
@@ -39,11 +43,27 @@ class ChatHistory:
             json.dump(self.history, f, indent=2)
 
 
-def get_bash_history(count: int) -> str:
-    history_file = os.path.expanduser("~/.bash_history")
+def history_file() -> str:
+    """Path to the current shell's history file."""
+    shell = os.path.basename(os.environ.get("SHELL", ""))
+    default = "~/.zsh_history" if shell == "zsh" else "~/.bash_history"
+    return os.path.expanduser(os.environ.get("HISTFILE") or default)
+
+
+def get_shell_history(count: int) -> str:
+    """Return the last `count` commands from the current shell's history file."""
     try:
-        with open(history_file, "r") as f:
-            lines = f.readlines()
-        return "".join(lines[-count:])
-    except IOError:
+        # zsh metafies non-ASCII bytes, so the file is not always valid UTF-8.
+        with open(history_file(), errors="replace") as f:
+            lines = f.read().splitlines()
+    except OSError:
         return ""
+
+    commands: list[str] = []
+    for line in lines:
+        if commands and commands[-1].endswith("\\"):
+            # zsh stores a multi-line command as backslash-continued lines.
+            commands[-1] = commands[-1][:-1] + "\n" + line
+        else:
+            commands.append(ZSH_ENTRY.sub("", line))
+    return "".join(f"{command}\n" for command in commands[-count:])

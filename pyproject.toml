@@ -1,6 +1,6 @@
 [project]
 name = "Vertex-CLI"
-version = "0.1.43"
+version = "0.1.44"
 description = "A unified CLI tool for interacting with multiple LLMs via LangChain"
 readme = "README.md"
 authors = [

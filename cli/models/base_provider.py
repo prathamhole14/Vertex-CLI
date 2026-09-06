@@ -1,7 +1,20 @@
 """Base provider implementation with common functionality."""
 
+from importlib import import_module
+
 from langchain_core.language_models import BaseChatModel
 from cli.models.base import ILLMProvider, ModelConfig
+
+
+def load_backend(module: str, name: str, extra: str):
+    """Import an optional provider backend, or say how to install it."""
+    try:
+        return getattr(import_module(module), name)
+    except ImportError:
+        raise ImportError(
+            f"Support for '{extra}' models is not installed. "
+            f"Run: pip install 'Vertex-CLI[{extra}]'"
+        ) from None
 
 
 class BaseLLMProvider(ILLMProvider):

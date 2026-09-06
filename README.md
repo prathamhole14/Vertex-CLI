@@ -18,6 +18,14 @@ cd Vertex-CLI
 pip install -e .
 ```
 
+Gemini works out of the box. OpenAI and Anthropic are optional extras, so their
+packages are only downloaded if you ask for them:
+
+```bash
+pip install -e ".[openai]"     # OpenAI models
+pip install -e ".[anthropic]"  # Anthropic Claude models
+```
+
 ## Quick Start
 
 ```bash
@@ -54,9 +62,9 @@ tex remove <model>                   # Remove model
 
 ## Supported Providers
 
-- **Google Gemini**: `google` or `gemini`
-- **OpenAI**: `openai`
-- **Anthropic**: `anthropic` or `claude`
+- **Google Gemini**: `google` or `gemini` — installed by default
+- **OpenAI**: `openai` — needs `pip install 'Vertex-CLI[openai]'`
+- **Anthropic**: `anthropic` or `claude` — needs `pip install 'Vertex-CLI[anthropic]'`
 
 ## Configuration
 

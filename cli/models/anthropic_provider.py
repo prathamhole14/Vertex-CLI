@@ -1,14 +1,14 @@
 """Anthropic Claude provider implementation using LangChain."""
 
-from langchain_anthropic import ChatAnthropic
 from langchain_core.language_models import BaseChatModel
-from cli.models.base_provider import BaseLLMProvider
+from cli.models.base_provider import BaseLLMProvider, load_backend
 
 
 class AnthropicProvider(BaseLLMProvider):
     """Anthropic Claude LLM provider."""
 
     def _create_llm(self) -> BaseChatModel:
+        ChatAnthropic = load_backend("langchain_anthropic", "ChatAnthropic", "anthropic")
         kwargs = {
             "model": self.config.name,
             "anthropic_api_key": self.config.api_key,

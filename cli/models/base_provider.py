@@ -20,8 +20,8 @@ class BaseLLMProvider(ILLMProvider):
         """Generate response from LLM."""
         if "temperature" in kwargs:
             self.llm.temperature = kwargs["temperature"]
-        response = self.llm.invoke(prompt)
-        return response.content
+        # LangChain 1.x returns content as a list of blocks; .text flattens it to a string.
+        return self.llm.invoke(prompt).text
 
     def validate_config(self) -> bool:
         """Validate configuration."""

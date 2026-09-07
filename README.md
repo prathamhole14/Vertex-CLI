@@ -13,15 +13,15 @@ A modern CLI tool for interacting with multiple LLMs using LangChain.
 ## Installation
 
 ```bash
-pip install Vertex-CLI
+pip install vrtx
 ```
 
 Gemini works out of the box. OpenAI and Anthropic are optional extras, so their
 packages are only downloaded if you ask for them:
 
 ```bash
-pip install "Vertex-CLI[openai]"     # OpenAI models
-pip install "Vertex-CLI[anthropic]"  # Anthropic Claude models
+pip install "vrtx[openai]"     # OpenAI models
+pip install "vrtx[anthropic]"  # Anthropic Claude models
 ```
 
 To work on Vertex-CLI itself, install from a clone instead:
@@ -36,41 +36,41 @@ pip install -e ".[openai,anthropic]"
 
 ```bash
 # Initialize configuration
-vtx --setup
+vrtx --setup
 
 # Configure a model (provider auto-detected from model name)
-vtx config gemini-3.6-flash YOUR_API_KEY
-vtx config gpt-4 YOUR_OPENAI_KEY
-vtx config claude-opus-5 YOUR_ANTHROPIC_KEY
+vrtx config gemini-3.6-flash YOUR_API_KEY
+vrtx config gpt-4 YOUR_OPENAI_KEY
+vrtx config claude-opus-5 YOUR_ANTHROPIC_KEY
 
 # Or specify provider explicitly
-vtx config my-model YOUR_KEY --provider google
+vrtx config my-model YOUR_KEY --provider google
 
 # Select active model
-vtx select gemini-3.6-flash
+vrtx select gemini-3.6-flash
 
 # Use it
-vtx "explain quantum computing"
+vrtx "explain quantum computing"
 ```
 
 ## Commands
 
 ```bash
-vtx "your question"                  # Ask a question
-vtx chat <text>                      # Chat mode
-vtx debug                            # Debug shell commands
-vtx config <model> <api_key>         # Configure model (auto-detects provider)
-vtx config <model> <key> --provider <provider>  # Specify provider explicitly
-vtx list                             # List models
-vtx select <model>                   # Select active model
-vtx remove <model>                   # Remove model
+vrtx "your question"                  # Ask a question
+vrtx chat <text>                      # Chat mode
+vrtx debug                            # Debug shell commands
+vrtx config <model> <api_key>         # Configure model (auto-detects provider)
+vrtx config <model> <key> --provider <provider>  # Specify provider explicitly
+vrtx list                             # List models
+vrtx select <model>                   # Select active model
+vrtx remove <model>                   # Remove model
 ```
 
 ## Supported Providers
 
 - **Google Gemini**: `google` or `gemini` — installed by default
-- **OpenAI**: `openai` — needs `pip install 'Vertex-CLI[openai]'`
-- **Anthropic**: `anthropic` or `claude` — needs `pip install 'Vertex-CLI[anthropic]'`
+- **OpenAI**: `openai` — needs `pip install 'vrtx[openai]'`
+- **Anthropic**: `anthropic` or `claude` — needs `pip install 'vrtx[anthropic]'`
 
 ## Configuration
 
@@ -111,10 +111,10 @@ You can either use the `chat` subcommand or omit it entirely:
 
 ```bash
 # Explicit subcommand
-vtx chat "Tell me about the solar system"
+vrtx chat "Tell me about the solar system"
 
 # Shortcut form (no subcommand)
-vtx "Tell me about the solar system"
+vrtx "Tell me about the solar system"
 ```
 
 Replace the quoted string with any query you'd like.
@@ -132,19 +132,19 @@ Debugging is currently in beta but can analyze recent shell commands to identify
 ### Debug the Last 3 Commands (default)
 
 ```bash
-vtx debug
+vrtx debug
 ```
 
 ### Specify the Number of Commands to Debug
 
 ```bash
-vtx debug -n 5
+vrtx debug -n 5
 ```
 
 ### Add a Custom Debugging Message
 
 ```bash
-vtx debug -n 5 -p "Explain why \`git commit\` failed"
+vrtx debug -n 5 -p "Explain why \`git commit\` failed"
 ```
 
 ---

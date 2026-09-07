@@ -1,5 +1,5 @@
 [project]
-name = "Vertex-CLI"
+name = "vrtx"
 version = "1.1.0"
 description = "A unified CLI tool for interacting with multiple LLMs via LangChain"
 readme = "README.md"
@@ -40,15 +40,15 @@ anthropic = ["langchain-anthropic>=1.0.0,<2.0.0"]
 dev = ["twine", "build", "mkdocs-material", "mkdocs-material[imaging]", "mkdocstrings", "mkdocstrings-python"]
 
 [project.scripts]
-vtx = "cli.prompt:main"
-vtx-init = "cli.utils:install_requirements"
+vrtx = "vrtx.prompt:main"
+vrtx-init = "vrtx.utils:install_requirements"
 
 [build-system]
 requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["cli*"]
+include = ["vrtx*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -59,7 +59,7 @@ addopts = [
     "-v",
     "--strict-markers",
     "--tb=short",
-    "--cov=cli",
+    "--cov=vrtx",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-report=xml",
@@ -71,7 +71,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["cli"]
+source = ["vrtx"]
 omit = [
     "*/tests/*",
     "*/__pycache__/*",

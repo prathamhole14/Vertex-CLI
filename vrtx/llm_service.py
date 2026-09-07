@@ -2,10 +2,10 @@
 
 import threading
 from typing import Optional
-from cli.config_manager import ConfigurationManager
-from cli.models.base import ILLMProvider, ModelConfig
-from cli.models.factory import LLMProviderFactory
-from cli.utils import spin_loader
+from vrtx.config_manager import ConfigurationManager
+from vrtx.models.base import ILLMProvider, ModelConfig
+from vrtx.models.factory import LLMProviderFactory
+from vrtx.utils import spin_loader
 
 
 class LLMService:
@@ -63,8 +63,8 @@ class LLMService:
             model_name = self.config_manager.get_selected_model()
             if not model_name:
                 raise ValueError(
-                    "No model selected. Run 'vtx config <model> <api_key>', "
-                    "then 'vtx select <model>'."
+                    "No model selected. Run 'vrtx config <model> <api_key>', "
+                    "then 'vrtx select <model>'."
                 )
 
         # Get provider

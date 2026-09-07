@@ -1,8 +1,8 @@
 """LLM interaction module."""
 
-from cli.llm_service import LLMService
-from cli.utils import prettify_llm_output
-from cli.chat_history import ChatHistory
+from vrtx.llm_service import LLMService
+from vrtx.utils import prettify_llm_output
+from vrtx.chat_history import ChatHistory
 
 
 def generate_response(prompt: str, llm_service: LLMService, history: ChatHistory):

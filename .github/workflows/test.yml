@@ -32,13 +32,13 @@ jobs:
         run: pip install -r requirements-dev.txt
 
       - name: Syntax errors and undefined names
-        run: flake8 cli tests --count --select=E9,F63,F7,F82 --show-source --statistics
+        run: flake8 vrtx tests --count --select=E9,F63,F7,F82 --show-source --statistics
 
       - name: Style report (advisory)
-        run: flake8 cli tests --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
+        run: flake8 vrtx tests --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
 
       - name: Formatting
-        run: black --check cli tests
+        run: black --check vrtx tests
 
   test:
     # Every Python on Linux; oldest and newest only elsewhere, which is where

@@ -5,7 +5,7 @@ from __future__ import annotations
 from importlib import import_module
 from typing import TYPE_CHECKING
 
-from cli.models.base import ILLMProvider, ModelConfig
+from vrtx.models.base import ILLMProvider, ModelConfig
 
 if TYPE_CHECKING:  # importing this costs ~190ms, and it is only a type hint
     from langchain_core.language_models import BaseChatModel
@@ -18,7 +18,7 @@ def load_backend(module: str, name: str, extra: str):
     except ImportError:
         raise ImportError(
             f"Support for '{extra}' models is not installed. "
-            f"Run: pip install 'Vertex-CLI[{extra}]'"
+            f"Run: pip install 'vrtx[{extra}]'"
         ) from None
 
 

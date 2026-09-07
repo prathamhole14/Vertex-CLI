@@ -48,7 +48,7 @@ jobs:
         run: |
           python -m venv /tmp/smoke
           /tmp/smoke/bin/pip install dist/*.whl
-          /tmp/smoke/bin/vtx list
+          /tmp/smoke/bin/vrtx list
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
@@ -65,7 +65,7 @@ jobs:
     # workflow; no API token is stored anywhere.
     environment:
       name: pypi
-      url: https://pypi.org/p/Vertex-CLI
+      url: https://pypi.org/p/vrtx
     permissions:
       id-token: write
     steps:

@@ -14,10 +14,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 def test_imports():
     """Test that all modules can be imported."""
-    from cli.chat_history import ChatHistory
-    from cli.config_manager import ConfigurationManager
-    from cli.models.base import ModelConfig
-    from cli.models.factory import LLMProviderFactory
+    from vrtx.chat_history import ChatHistory
+    from vrtx.config_manager import ConfigurationManager
+    from vrtx.models.base import ModelConfig
+    from vrtx.models.factory import LLMProviderFactory
 
     assert ChatHistory is not None
     assert ConfigurationManager is not None
@@ -27,7 +27,7 @@ def test_imports():
 
 def test_model_config_basic():
     """Test basic ModelConfig creation."""
-    from cli.models.base import ModelConfig
+    from vrtx.models.base import ModelConfig
 
     config = ModelConfig(name="test-model", provider="google", api_key="test-key", temperature=0.7)
     assert config.name == "test-model"
@@ -38,7 +38,7 @@ def test_model_config_basic():
 
 def test_configuration_manager_basic():
     """Test basic ConfigurationManager operations."""
-    from cli.config_manager import ConfigurationManager
+    from vrtx.config_manager import ConfigurationManager
 
     with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".json") as f:
         temp_file = f.name
@@ -62,7 +62,7 @@ def test_configuration_manager_basic():
 
 def test_chat_history_basic():
     """Test basic ChatHistory operations."""
-    from cli.chat_history import ChatHistory
+    from vrtx.chat_history import ChatHistory
 
     with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".json") as f:
         temp_file = f.name
@@ -85,8 +85,8 @@ def test_chat_history_basic():
 
 def test_provider_factory():
     """Test provider factory creates correct providers."""
-    from cli.models.base import ModelConfig
-    from cli.models.factory import LLMProviderFactory
+    from vrtx.models.base import ModelConfig
+    from vrtx.models.factory import LLMProviderFactory
 
     # Test Gemini
     config = ModelConfig("gemini-2.5-flash", "google", "test-key", 0.7)

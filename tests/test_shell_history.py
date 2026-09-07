@@ -1,7 +1,7 @@
 """
 Tests for reading the current shell's history file.
 
-`vtx debug` used to read ~/.bash_history unconditionally, so it silently returned
+`vrtx debug` used to read ~/.bash_history unconditionally, so it silently returned
 nothing under zsh, and zsh's metafied bytes made a plain UTF-8 read raise
 UnicodeDecodeError (which the old `except IOError` did not catch).
 """
@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pytest
 
-from cli.chat_history import get_shell_history, history_file
+from vrtx.chat_history import get_shell_history, history_file
 
 
 @pytest.fixture

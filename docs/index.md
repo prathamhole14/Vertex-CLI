@@ -7,7 +7,7 @@
 For example, you can run:
 
 ```bash
-vtx "tell me about the solar system"
+vrtx "tell me about the solar system"
 ```
 
 ![Example usage](images/eg_matplotlib.gif)
@@ -18,16 +18,16 @@ Replace `"tell me about the solar system"` with any query you like Vertex-CLI wi
 
 ### Installation
 
-To install [`Vertex-CLI`](https://pypi.org/project/Vertex-CLI/), run:
+To install [`vrtx`](https://pypi.org/project/vrtx/), run:
 
 ```bash
-pip install Vertex-CLI
+pip install vrtx
 ```
 
 Then initialize the CLI with:
 
 ```bash
-vtx --setup
+vrtx --setup
 ```
 
 ---
@@ -37,25 +37,25 @@ vtx --setup
 * **Add a model and its API key:**
 
   ```bash
-  vtx config <model-name> <api-key>
+  vrtx config <model-name> <api-key>
   ```
 
 * **Remove a model:**
 
   ```bash
-  vtx remove <model-name>
+  vrtx remove <model-name>
   ```
 
 * **List all configured models:**
 
   ```bash
-  vtx list
+  vrtx list
   ```
 
 * **Select a model to use by default:**
 
   ```bash
-  vtx select <model-name>
+  vrtx select <model-name>
   ```
 
 ---

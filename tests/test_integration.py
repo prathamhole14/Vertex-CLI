@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pytest
 
-from cli.models.base import ModelConfig
-from cli.models.factory import LLMProviderFactory
+from vrtx.models.base import ModelConfig
+from vrtx.models.factory import LLMProviderFactory
 
 API_KEY_ENV = "VERTEX_CLI_TEST_API_KEY"
 MODEL_ENV = "VERTEX_CLI_TEST_MODEL"

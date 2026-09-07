@@ -10,14 +10,14 @@ import json
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from cli.models.base import ModelConfig
-from cli.models.factory import LLMProviderFactory
-from cli.models.gemini_provider import GeminiProvider
-from cli.models.openai_provider import OpenAIProvider
-from cli.models.anthropic_provider import AnthropicProvider
-from cli.config_manager import ConfigurationManager
-from cli.llm_service import LLMService
-from cli.chat_history import ChatHistory
+from vrtx.models.base import ModelConfig
+from vrtx.models.factory import LLMProviderFactory
+from vrtx.models.gemini_provider import GeminiProvider
+from vrtx.models.openai_provider import OpenAIProvider
+from vrtx.models.anthropic_provider import AnthropicProvider
+from vrtx.config_manager import ConfigurationManager
+from vrtx.llm_service import LLMService
+from vrtx.chat_history import ChatHistory
 
 
 def test_model_config():

@@ -1,5 +1,5 @@
 """
-End-to-end tests for the `vtx` command line.
+End-to-end tests for the `vrtx` command line.
 
 These drive `main()` as the console script does, with the provider factory stubbed
 out, so the dispatch in cli/prompt.py and cli/llm.py runs without network access.
@@ -14,8 +14,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pytest
 
-from cli import prompt
-from cli.models.factory import LLMProviderFactory
+from vrtx import prompt
+from vrtx.models.factory import LLMProviderFactory
 
 pytestmark = pytest.mark.unit
 
@@ -36,7 +36,7 @@ def cli(tmp_path, monkeypatch):
     monkeypatch.setattr(LLMProviderFactory, "create", staticmethod(lambda config: _Stub()))
 
     def runner(*args):
-        monkeypatch.setattr(sys, "argv", ["vtx", *args])
+        monkeypatch.setattr(sys, "argv", ["vrtx", *args])
         prompt.main()
 
     runner.prompts = []

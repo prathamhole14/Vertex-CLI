@@ -5,10 +5,10 @@ import os
 import sys
 import argparse
 import warnings
-from cli.config_manager import ConfigurationManager
-from cli.llm_service import LLMService
-from cli.chat_history import ChatHistory, get_shell_history, history_file
-from cli.llm import generate_response
+from vrtx.config_manager import ConfigurationManager
+from vrtx.llm_service import LLMService
+from vrtx.chat_history import ChatHistory, get_shell_history, history_file
+from vrtx.llm import generate_response
 
 HISTORY_FILE = os.path.expanduser("~/.cache/cli_chat_history.json")
 DEFAULT_SHELL_HISTORY_COUNT = 3
@@ -38,7 +38,7 @@ def _run():
 
     # Subcommand parsing
     parser = argparse.ArgumentParser(
-        prog="vtx", description="CLI for interacting with multiple LLMs via LangChain"
+        prog="vrtx", description="CLI for interacting with multiple LLMs via LangChain"
     )
     parser.add_argument("--setup", action="store_true", help="Create default config")
     subparsers = parser.add_subparsers(dest="command")

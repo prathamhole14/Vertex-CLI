@@ -11,9 +11,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pytest
 
-from cli.models import base_provider
-from cli.models.base import ModelConfig
-from cli.models.factory import LLMProviderFactory
+from vrtx.models import base_provider
+from vrtx.models.base import ModelConfig
+from vrtx.models.factory import LLMProviderFactory
 
 pytestmark = pytest.mark.unit
 
@@ -28,7 +28,7 @@ def test_missing_backend_names_the_extra_to_install(monkeypatch, model, provider
 
     monkeypatch.setattr(base_provider, "import_module", _missing)
 
-    with pytest.raises(ImportError, match=rf"pip install 'Vertex-CLI\[{extra}\]'"):
+    with pytest.raises(ImportError, match=rf"pip install 'vrtx\[{extra}\]'"):
         LLMProviderFactory.create(ModelConfig(model, provider, "test-key", 0.7))
 
 

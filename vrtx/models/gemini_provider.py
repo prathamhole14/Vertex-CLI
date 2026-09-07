@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from cli.models.base_provider import BaseLLMProvider
+from vrtx.models.base_provider import BaseLLMProvider
 
 if TYPE_CHECKING:
     from langchain_core.language_models import BaseChatModel

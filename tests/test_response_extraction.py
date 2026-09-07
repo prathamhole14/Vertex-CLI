@@ -13,8 +13,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from langchain_core.messages import AIMessage
 
-from cli.models.base import ModelConfig
-from cli.models.base_provider import BaseLLMProvider
+from vrtx.models.base import ModelConfig
+from vrtx.models.base_provider import BaseLLMProvider
 
 
 class _StubProvider(BaseLLMProvider):

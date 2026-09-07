@@ -1,10 +1,10 @@
 """Factory for creating LLM provider instances."""
 
 from typing import Dict, Type
-from cli.models.base import ILLMProvider, ModelConfig
-from cli.models.gemini_provider import GeminiProvider
-from cli.models.openai_provider import OpenAIProvider
-from cli.models.anthropic_provider import AnthropicProvider
+from vrtx.models.base import ILLMProvider, ModelConfig
+from vrtx.models.gemini_provider import GeminiProvider
+from vrtx.models.openai_provider import OpenAIProvider
+from vrtx.models.anthropic_provider import AnthropicProvider
 
 
 class LLMProviderFactory:

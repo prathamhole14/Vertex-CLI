@@ -19,7 +19,7 @@ def spin_loader(stop_event):
 
 def install_requirements():
     """Install the dependencies declared in pyproject.toml."""
-    for package in requires("Vertex-CLI") or []:
+    for package in requires("vrtx") or []:
         if "extra ==" not in package:  # skip optional [dev] extras
             subprocess.run([sys.executable, "-m", "pip", "install", package])
 

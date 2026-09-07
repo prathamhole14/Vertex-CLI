@@ -12,23 +12,23 @@ Follow these steps to get started:
 
 ### Install Vertex-CLI
 
-To install [`Vertex-CLI`](https://pypi.org/project/Vertex-CLI/), run:
+To install [`vrtx`](https://pypi.org/project/vrtx/), run:
 
 ```bash
-pip install Vertex-CLI
+pip install vrtx
 ```
 
 Gemini is installed by default. Add a provider extra if you need one:
 
 ```bash
-pip install "Vertex-CLI[openai]"
-pip install "Vertex-CLI[anthropic]"
+pip install "vrtx[openai]"
+pip install "vrtx[anthropic]"
 ```
 
 After installation, initialize the CLI configuration file:
 
 ```bash
-vtx --setup
+vrtx --setup
 ```
 
 This will create an empty `models_config.json` under `~/.config/ai_model_manager/`.
@@ -55,7 +55,7 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 3. **Initialize the CLI configuration:**
 
    ```bash
-   vtx --setup
+   vrtx --setup
    ```
 
 ---
@@ -65,7 +65,7 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 You can configure the CLI to use a specific LLM model by adding or updating your API key:
 
 ```bash
-vtx config gemini-flash-latest YOUR_MODEL_API_KEY
+vrtx config gemini-flash-latest YOUR_MODEL_API_KEY
 ```
 
 Replace `gemini-flash-latest` with your preferred model name and `YOUR_MODEL_API_KEY` with your API key.
@@ -73,19 +73,19 @@ Replace `gemini-flash-latest` with your preferred model name and `YOUR_MODEL_API
 To list all configured models:
 
 ```bash
-vtx list
+vrtx list
 ```
 
 To remove a model:
 
 ```bash
-vtx remove gemini-flash-lite-latest
+vrtx remove gemini-flash-lite-latest
 ```
 
 To select a model as the default:
 
 ```bash
-vtx select gemini-flash-latest
+vrtx select gemini-flash-latest
 ```
 
 ---
@@ -99,7 +99,7 @@ Once installed and configured, you can start chatting or debugging commands:
 * **Convert an array to a NumPy array**
 
   ```bash
-  vtx "how to convert an array into a NumPy array"
+  vrtx "how to convert an array into a NumPy array"
   ```
 
 * **Manage API keys for models**
@@ -107,28 +107,28 @@ Once installed and configured, you can start chatting or debugging commands:
   * Add or update a model’s API key:
 
     ```bash
-    vtx config <model-name> <api-key>
+    vrtx config <model-name> <api-key>
     ```
   * Remove a model:
 
     ```bash
-    vtx remove <model-name>
+    vrtx remove <model-name>
     ```
   * List all saved models and their API keys:
 
     ```bash
-    vtx list
+    vrtx list
     ```
   * Select a model to use:
 
     ```bash
-    vtx select <model-name>
+    vrtx select <model-name>
     ```
   * Show available commands/help:
 
     ```bash
-    vtx -h
-    vtx chat -h
+    vrtx -h
+    vrtx chat -h
     ```
 
 ### Debugging (Beta Feature)
@@ -136,19 +136,19 @@ Once installed and configured, you can start chatting or debugging commands:
 * Debug the last 3 commands (default):
 
   ```bash
-  vtx debug
+  vrtx debug
   ```
 
 * Debug a specific number of recent commands (e.g., last 5):
 
   ```bash
-  vtx debug -n 5
+  vrtx debug -n 5
   ```
 
 * Add a custom message to explain your assumptions or observations:
 
   ```bash
-  vtx debug -n 5 -p "I think this issue might be related to environment variables"
+  vrtx debug -n 5 -p "I think this issue might be related to environment variables"
   ```
 
 ---

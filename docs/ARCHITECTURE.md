@@ -110,7 +110,7 @@ Each class has one clear purpose:
 
 Example:
 ```python
-from cli.models.base_provider import BaseLLMProvider
+from vrtx.models.base_provider import BaseLLMProvider
 
 class YourProvider(BaseLLMProvider):
     def _create_llm(self):

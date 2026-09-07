@@ -1,5 +1,5 @@
 """
-End-to-end tests for the `tex` command line.
+End-to-end tests for the `vtx` command line.
 
 These drive `main()` as the console script does, with the provider factory stubbed
 out, so the dispatch in cli/prompt.py and cli/llm.py runs without network access.
@@ -36,7 +36,7 @@ def cli(tmp_path, monkeypatch):
     monkeypatch.setattr(LLMProviderFactory, "create", staticmethod(lambda config: _Stub()))
 
     def runner(*args):
-        monkeypatch.setattr(sys, "argv", ["tex", *args])
+        monkeypatch.setattr(sys, "argv", ["vtx", *args])
         prompt.main()
 
     runner.prompts = []

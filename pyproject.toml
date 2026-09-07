@@ -1,6 +1,6 @@
 [project]
 name = "Vertex-CLI"
-version = "1.0.1"
+version = "1.1.0"
 description = "A unified CLI tool for interacting with multiple LLMs via LangChain"
 readme = "README.md"
 authors = [
@@ -40,8 +40,8 @@ anthropic = ["langchain-anthropic>=1.0.0,<2.0.0"]
 dev = ["twine", "build", "mkdocs-material", "mkdocs-material[imaging]", "mkdocstrings", "mkdocstrings-python"]
 
 [project.scripts]
-tex = "cli.prompt:main"
-tex-init = "cli.utils:install_requirements"
+vtx = "cli.prompt:main"
+vtx-init = "cli.utils:install_requirements"
 
 [build-system]
 requires = ["setuptools>=42", "wheel"]

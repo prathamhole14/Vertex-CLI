@@ -21,14 +21,14 @@ This allows you to make changes to the code and use them immediately without rei
 Run this command to set up the CLI and install necessary dependencies. It will add a free API key for you to get started:
 
 ```bash
-tex-init
+vtx-init
 ```
 
 ## **4. Configure the CLI with Your Model (Optional)**
 If you have your own model API key, you can configure it like this:
 
 ```bash
-tex config gemini-flash-latest <model-api-key>
+vtx config gemini-flash-latest <model-api-key>
 ```
 
 Replace `gemini-flash-latest` with your model's name and `<model-api-key>` with your actual API key.

@@ -7,7 +7,7 @@
 For example, you can run:
 
 ```bash
-tex "tell me about the solar system"
+vtx "tell me about the solar system"
 ```
 
 ![Example usage](images/eg_matplotlib.gif)
@@ -27,7 +27,7 @@ pip install Vertex-CLI
 Then initialize the CLI with:
 
 ```bash
-tex --setup
+vtx --setup
 ```
 
 ---
@@ -37,25 +37,25 @@ tex --setup
 * **Add a model and its API key:**
 
   ```bash
-  tex config <model-name> <api-key>
+  vtx config <model-name> <api-key>
   ```
 
 * **Remove a model:**
 
   ```bash
-  tex remove <model-name>
+  vtx remove <model-name>
   ```
 
 * **List all configured models:**
 
   ```bash
-  tex list
+  vtx list
   ```
 
 * **Select a model to use by default:**
 
   ```bash
-  tex select <model-name>
+  vtx select <model-name>
   ```
 
 ---

@@ -36,34 +36,34 @@ pip install -e ".[openai,anthropic]"
 
 ```bash
 # Initialize configuration
-tex --setup
+vtx --setup
 
 # Configure a model (provider auto-detected from model name)
-tex config gemini-3.6-flash YOUR_API_KEY
-tex config gpt-4 YOUR_OPENAI_KEY
-tex config claude-opus-5 YOUR_ANTHROPIC_KEY
+vtx config gemini-3.6-flash YOUR_API_KEY
+vtx config gpt-4 YOUR_OPENAI_KEY
+vtx config claude-opus-5 YOUR_ANTHROPIC_KEY
 
 # Or specify provider explicitly
-tex config my-model YOUR_KEY --provider google
+vtx config my-model YOUR_KEY --provider google
 
 # Select active model
-tex select gemini-3.6-flash
+vtx select gemini-3.6-flash
 
 # Use it
-tex "explain quantum computing"
+vtx "explain quantum computing"
 ```
 
 ## Commands
 
 ```bash
-tex "your question"                  # Ask a question
-tex chat <text>                      # Chat mode
-tex debug                            # Debug shell commands
-tex config <model> <api_key>         # Configure model (auto-detects provider)
-tex config <model> <key> --provider <provider>  # Specify provider explicitly
-tex list                             # List models
-tex select <model>                   # Select active model
-tex remove <model>                   # Remove model
+vtx "your question"                  # Ask a question
+vtx chat <text>                      # Chat mode
+vtx debug                            # Debug shell commands
+vtx config <model> <api_key>         # Configure model (auto-detects provider)
+vtx config <model> <key> --provider <provider>  # Specify provider explicitly
+vtx list                             # List models
+vtx select <model>                   # Select active model
+vtx remove <model>                   # Remove model
 ```
 
 ## Supported Providers
@@ -111,10 +111,10 @@ You can either use the `chat` subcommand or omit it entirely:
 
 ```bash
 # Explicit subcommand
-tex chat "Tell me about the solar system"
+vtx chat "Tell me about the solar system"
 
 # Shortcut form (no subcommand)
-tex "Tell me about the solar system"
+vtx "Tell me about the solar system"
 ```
 
 Replace the quoted string with any query you'd like.
@@ -132,19 +132,19 @@ Debugging is currently in beta but can analyze recent shell commands to identify
 ### Debug the Last 3 Commands (default)
 
 ```bash
-tex debug
+vtx debug
 ```
 
 ### Specify the Number of Commands to Debug
 
 ```bash
-tex debug -n 5
+vtx debug -n 5
 ```
 
 ### Add a Custom Debugging Message
 
 ```bash
-tex debug -n 5 -p "Explain why \`git commit\` failed"
+vtx debug -n 5 -p "Explain why \`git commit\` failed"
 ```
 
 ---

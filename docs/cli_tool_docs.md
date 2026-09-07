@@ -28,7 +28,7 @@ pip install "Vertex-CLI[anthropic]"
 After installation, initialize the CLI configuration file:
 
 ```bash
-tex --setup
+vtx --setup
 ```
 
 This will create an empty `models_config.json` under `~/.config/ai_model_manager/`.
@@ -55,7 +55,7 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 3. **Initialize the CLI configuration:**
 
    ```bash
-   tex --setup
+   vtx --setup
    ```
 
 ---
@@ -65,7 +65,7 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 You can configure the CLI to use a specific LLM model by adding or updating your API key:
 
 ```bash
-tex config gemini-flash-latest YOUR_MODEL_API_KEY
+vtx config gemini-flash-latest YOUR_MODEL_API_KEY
 ```
 
 Replace `gemini-flash-latest` with your preferred model name and `YOUR_MODEL_API_KEY` with your API key.
@@ -73,19 +73,19 @@ Replace `gemini-flash-latest` with your preferred model name and `YOUR_MODEL_API
 To list all configured models:
 
 ```bash
-tex list
+vtx list
 ```
 
 To remove a model:
 
 ```bash
-tex remove gemini-flash-lite-latest
+vtx remove gemini-flash-lite-latest
 ```
 
 To select a model as the default:
 
 ```bash
-tex select gemini-flash-latest
+vtx select gemini-flash-latest
 ```
 
 ---
@@ -99,7 +99,7 @@ Once installed and configured, you can start chatting or debugging commands:
 * **Convert an array to a NumPy array**
 
   ```bash
-  tex "how to convert an array into a NumPy array"
+  vtx "how to convert an array into a NumPy array"
   ```
 
 * **Manage API keys for models**
@@ -107,28 +107,28 @@ Once installed and configured, you can start chatting or debugging commands:
   * Add or update a model’s API key:
 
     ```bash
-    tex config <model-name> <api-key>
+    vtx config <model-name> <api-key>
     ```
   * Remove a model:
 
     ```bash
-    tex remove <model-name>
+    vtx remove <model-name>
     ```
   * List all saved models and their API keys:
 
     ```bash
-    tex list
+    vtx list
     ```
   * Select a model to use:
 
     ```bash
-    tex select <model-name>
+    vtx select <model-name>
     ```
   * Show available commands/help:
 
     ```bash
-    tex -h
-    tex chat -h
+    vtx -h
+    vtx chat -h
     ```
 
 ### Debugging (Beta Feature)
@@ -136,19 +136,19 @@ Once installed and configured, you can start chatting or debugging commands:
 * Debug the last 3 commands (default):
 
   ```bash
-  tex debug
+  vtx debug
   ```
 
 * Debug a specific number of recent commands (e.g., last 5):
 
   ```bash
-  tex debug -n 5
+  vtx debug -n 5
   ```
 
 * Add a custom message to explain your assumptions or observations:
 
   ```bash
-  tex debug -n 5 -p "I think this issue might be related to environment variables"
+  vtx debug -n 5 -p "I think this issue might be related to environment variables"
   ```
 
 ---

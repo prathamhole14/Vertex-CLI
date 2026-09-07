@@ -1,7 +1,7 @@
 """
 Tests for reading the current shell's history file.
 
-`tex debug` used to read ~/.bash_history unconditionally, so it silently returned
+`vtx debug` used to read ~/.bash_history unconditionally, so it silently returned
 nothing under zsh, and zsh's metafied bytes made a plain UTF-8 read raise
 UnicodeDecodeError (which the old `except IOError` did not catch).
 """

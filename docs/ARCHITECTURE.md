@@ -23,11 +23,11 @@ LangChain Layer (ChatGoogleGenerativeAI, ChatOpenAI, ChatAnthropic)
 
 ### 1. Base Interfaces
 
-**ILLMProvider** (`cli/models/base.py`)
+**ILLMProvider** (`vrtx/models/base.py`)
 - Abstract interface for all LLM providers
 - Methods: `generate()`, `get_provider_name()`, `validate_config()`
 
-**BaseLLMProvider** (`cli/models/base_provider.py`)
+**BaseLLMProvider** (`vrtx/models/base_provider.py`)
 - Base implementation with common functionality
 - Implements DRY principle
 - Provides: lazy initialization, validation, generation logic
@@ -45,19 +45,19 @@ All providers extend `BaseLLMProvider` and only implement:
 
 ### 3. Factory Pattern
 
-**LLMProviderFactory** (`cli/models/factory.py`)
+**LLMProviderFactory** (`vrtx/models/factory.py`)
 - Creates provider instances based on configuration
 - Supports provider registration for extensibility
 - Auto-detects provider from model name
 
 ### 4. Service Layer
 
-**ConfigurationManager** (`cli/config_manager.py`)
+**ConfigurationManager** (`vrtx/config_manager.py`)
 - Manages model configurations
 - Storage: `~/.config/ai_model_manager/models_config.json`
 - Operations: CRUD for models, selection management
 
-**LLMService** (`cli/llm_service.py`)
+**LLMService** (`vrtx/llm_service.py`)
 - Orchestrates LLM interactions
 - Provider caching for performance
 - Dependency injection pattern

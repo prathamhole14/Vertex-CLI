@@ -30,9 +30,9 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 [project.urls]
-Homepage = "https://github.com/prathamhole14/Vertex-CLI"
-Repository = "https://github.com/prathamhole14/Vertex-CLI"
-Documentation = "https://prathamhole14.github.io/Vertex-CLI/"
+Homepage = "https://github.com/prathamhole14/vrtx"
+Repository = "https://github.com/prathamhole14/vrtx"
+Documentation = "https://prathamhole14.github.io/vrtx/"
 
 [project.optional-dependencies]
 openai = ["langchain-openai>=1.0.0,<2.0.0"]

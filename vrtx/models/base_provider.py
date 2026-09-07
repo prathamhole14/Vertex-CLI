@@ -17,8 +17,7 @@ def load_backend(module: str, name: str, extra: str):
         return getattr(import_module(module), name)
     except ImportError:
         raise ImportError(
-            f"Support for '{extra}' models is not installed. "
-            f"Run: pip install 'vrtx[{extra}]'"
+            f"Support for '{extra}' models is not installed. Run: pip install 'vrtx[{extra}]'"
         ) from None
 
 

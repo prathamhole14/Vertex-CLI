@@ -1,4 +1,4 @@
-# Vertex CLI
+# vrtx
 
 A modern CLI tool for interacting with multiple LLMs using LangChain.
 
@@ -27,7 +27,7 @@ pip install "vrtx[anthropic]"  # Anthropic Claude models
 To work on Vertex-CLI itself, install from a clone instead:
 
 ```bash
-git clone https://github.com/prathamhole14/Vertex-CLI.git
+git clone https://github.com/prathamhole14/vrtx.git
 cd Vertex-CLI
 pip install -e ".[openai,anthropic]"
 ```
@@ -121,7 +121,7 @@ Replace the quoted string with any query you'd like.
 
 ![alt text](docs/images/eg_matplotlib.gif)
 
-🔗 **Complete CLI Documentation:** [CLI Commands](https://prathamhole14.github.io/Vertex-CLI/cli_tool_docs/)
+🔗 **Complete CLI Documentation:** [CLI Commands](https://prathamhole14.github.io/vrtx/cli_tool_docs/)
 
 ---
 
@@ -171,7 +171,7 @@ Contributions are welcome! Follow these steps to contribute:
    ```
 5. **Open a pull request**
 
-🔗 **Contributor Guide:** [How to Contribute](https://prathamhole14.github.io/Vertex-CLI/contributors_guide/)
+🔗 **Contributor Guide:** [How to Contribute](https://prathamhole14.github.io/vrtx/contributors_guide/)
 
 ---
 
@@ -183,4 +183,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Support
 
-If you encounter any issues, open an issue on the **[GitHub repository](https://github.com/prathamhole14/Vertex-CLI/issues)**.
+If you encounter any issues, open an issue on the **[GitHub repository](https://github.com/prathamhole14/vrtx/issues)**.

@@ -1,5 +1,5 @@
-site_name: Vertex-CLI Documentation
-site_url: https://github.com/prathamhole14/vertex-cli
+site_name: vrtx Documentation
+site_url: https://github.com/prathamhole14/vrtx
 theme:
   name: material
   features:

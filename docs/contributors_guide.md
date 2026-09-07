@@ -4,7 +4,7 @@
 First, fork the repository on GitHub. Then, clone it to your local machine:
 
 ```bash
-git clone https://github.com/[YourUserName]/Vertex-CLI
+git clone https://github.com/[YourUserName]/vrtx
 cd Vertex-CLI
 ```
 

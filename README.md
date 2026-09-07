@@ -28,7 +28,7 @@ To work on Vertex-CLI itself, install from a clone instead:
 
 ```bash
 git clone https://github.com/prathamhole14/vrtx.git
-cd Vertex-CLI
+cd vrtx
 pip install -e ".[openai,anthropic]"
 ```
 

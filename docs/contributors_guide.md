@@ -5,7 +5,7 @@ First, fork the repository on GitHub. Then, clone it to your local machine:
 
 ```bash
 git clone https://github.com/[YourUserName]/vrtx
-cd Vertex-CLI
+cd vrtx
 ```
 
 ## **2. Install in Editable Mode**

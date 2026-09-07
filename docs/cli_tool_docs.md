@@ -43,7 +43,7 @@ If you want to modify or contribute to Vertex CLI, install it in **editable mode
 
    ```bash
    git clone https://github.com/prathamhole14/vrtx
-   cd Vertex-CLI
+   cd vrtx
    ```
 
 2. **Install dependencies and set up the project:**

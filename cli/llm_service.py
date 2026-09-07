@@ -63,8 +63,8 @@ class LLMService:
             model_name = self.config_manager.get_selected_model()
             if not model_name:
                 raise ValueError(
-                    "No model selected. Run 'tex config <model> <api_key>', "
-                    "then 'tex select <model>'."
+                    "No model selected. Run 'vtx config <model> <api_key>', "
+                    "then 'vtx select <model>'."
                 )
 
         # Get provider

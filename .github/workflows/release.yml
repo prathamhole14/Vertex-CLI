@@ -48,7 +48,7 @@ jobs:
         run: |
           python -m venv /tmp/smoke
           /tmp/smoke/bin/pip install dist/*.whl
-          /tmp/smoke/bin/tex list
+          /tmp/smoke/bin/vtx list
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7

@@ -38,7 +38,7 @@ def _run():
 
     # Subcommand parsing
     parser = argparse.ArgumentParser(
-        prog="tex", description="CLI for interacting with multiple LLMs via LangChain"
+        prog="vtx", description="CLI for interacting with multiple LLMs via LangChain"
     )
     parser.add_argument("--setup", action="store_true", help="Create default config")
     subparsers = parser.add_subparsers(dest="command")

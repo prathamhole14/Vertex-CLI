@@ -16,6 +16,10 @@ A modern CLI tool for interacting with multiple LLMs using LangChain.
 pip install vrtx
 ```
 
+```bash
+conda install vrtx
+```
+
 Gemini works out of the box. OpenAI and Anthropic are optional extras, so their
 packages are only downloaded if you ask for them:
 
